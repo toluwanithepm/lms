@@ -1,0 +1,11 @@
+<!-- views/lessons/show.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson: <%= lesson.title %></title>
+</head>
+<body>
+  <h1>Lesson: <%= lesson.title %></h1>
+  <video src="/videos/<%= lesson.videoUrl %>" controls></video>
+</body>
+</html>

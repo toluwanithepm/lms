@@ -1,0 +1,17 @@
+<!-- views/lessons/index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lessons</title>
+</head>
+<body>
+  <h1>Lessons</h1>
+  <ul>
+    <% lessons.forEach(lesson => { %>
+      <li>
+        <a href="/lessons/<%= lesson.id %>"><%= lesson.title %></a>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
