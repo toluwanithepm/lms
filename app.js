@@ -1,9 +1,26 @@
 const express = require('express');
-
-// Create an instance of the Express application
 const app = express();
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 
-// Define routes and middleware here
+// Configure body-parser middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// Configure express-session middleware
+app.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: false
+}));
+
+// Configure passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Add routes and other middleware here
 
 // Start the server
 const port = 3000;
